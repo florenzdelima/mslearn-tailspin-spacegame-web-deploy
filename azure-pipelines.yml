@@ -89,6 +89,7 @@ stages:
               appName: '$(WebAppNameDev)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
+/*
 - stage: 'Test'
   displayName: 'Deploy to the test environment'
   dependsOn: Dev
@@ -136,7 +137,7 @@ stages:
         arguments: '--no-build --configuration $(buildConfiguration)'
         publishTestResults: true
         projects: '$(System.DefaultWorkingDirectory)/**/*UITests.csproj'
-
+*/
 - stage: 'Staging'
   displayName: 'Deploy to the staging environment'
   dependsOn: Test
